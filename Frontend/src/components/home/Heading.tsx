@@ -2,13 +2,15 @@ import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {COLORS, FONTS, SIZES} from '../../../constant/theme';
+import {useNavigation} from '@react-navigation/native';
 
 const Heading = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>New Rivals</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('ProductsList')}>
           <Ionicons name="grid" size={SIZES.large} color={COLORS.primary} />
         </TouchableOpacity>
       </View>
