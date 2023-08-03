@@ -9,7 +9,7 @@ function useFetch() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/products');
+      const response = await axios.get('http://192.168.0.164:3000/products/');
       setData(response.data.data);
       setLoading(false);
     } catch (err) {

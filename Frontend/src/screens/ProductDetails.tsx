@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Image,
 } from 'react-native';
+import {useRoute} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -15,6 +16,9 @@ import {COLORS, FONTS, SIZES} from '../../constant/theme';
 import Toast from 'react-native-toast-message';
 
 const ProductDetails = ({navigation}: any) => {
+  const route = useRoute();
+  const {product} = route.params;
+
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -57,16 +61,16 @@ const ProductDetails = ({navigation}: any) => {
 
       <Image
         source={{
-          uri: 'https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80',
+          uri: product.imageUrl,
         }}
         style={styles.img}
       />
 
       <View style={styles.details}>
         <View style={styles.titleRow}>
-          <Text style={styles.title}>Product</Text>
+          <Text style={styles.title}>{product.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>$660</Text>
+            <Text style={styles.price}>${product.price}</Text>
           </View>
         </View>
 
@@ -97,12 +101,8 @@ const ProductDetails = ({navigation}: any) => {
 
         <View style={styles.descWrapper}>
           <Text style={styles.desc}>Description</Text>
-          <Text style={styles.descTxt}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
-            veniam ea vitae omnis! Ratione neque facilis illum minus vero?
-            Similique quae eveniet, vero, delectus maiores aperiam consequuntur
-            praesentium maxime quam laudantium dolorem vel magni. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit.
+          <Text style={styles.descTxt} numberOfLines={5}>
+            {product.description}
           </Text>
         </View>
 
@@ -110,7 +110,7 @@ const ProductDetails = ({navigation}: any) => {
           <View style={styles.location}>
             <View style={{flexDirection: 'row'}}>
               <Ionicons name="location-outline" size={20} />
-              <Text style={{marginLeft: 5}}>Bankura</Text>
+              <Text style={{marginLeft: 5}}>{product.location}</Text>
             </View>
 
             <View style={{flexDirection: 'row'}}>
@@ -234,6 +234,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: FONTS.bold,
     fontSize: SIZES.large,
+    width: '70%',
   },
   titleRow: {
     marginHorizontal: 20,

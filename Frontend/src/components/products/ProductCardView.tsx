@@ -13,24 +13,25 @@ const ProductCardView = ({product}: ProductCardViewType) => {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('ProuctDetails')}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('ProuctDetails', {product})}>
       <View style={styles.container}>
         <View style={styles.imgContainer}>
           <Image
             source={{
-              uri: 'https://images.unsplash.com/photo-1567016507665-356928ac6679?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80',
+              uri: product.imageUrl,
             }}
             style={styles.img}
           />
         </View>
         <View style={styles.details}>
           <Text style={styles.title} numberOfLines={1}>
-            Details - {product}
+            {product.title}
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
-            Supplier Name
+            {product.supplier}
           </Text>
-          <Text style={styles.price}> $2605 </Text>
+          <Text style={styles.price}> ${product.price} </Text>
         </View>
         <TouchableOpacity style={styles.addBtn}>
           <Ionicons name="add-circle" size={35} color={COLORS.primary} />
