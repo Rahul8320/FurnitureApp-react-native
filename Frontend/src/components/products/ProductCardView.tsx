@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
     right: SIZES.xSmall,
   },
   container: {
-    width: 182,
-    height: 240,
-    marginEnd: 22,
+    width: 162,
+    height: 200,
+    marginEnd: SIZES.small,
     borderRadius: SIZES.medium,
     backgroundColor: COLORS.secondary,
-    marginBottom: 120,
+    marginBottom: SIZES.small,
   },
   details: {
     padding: SIZES.small,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     flex: 1,
-    width: 170,
+    width: 150,
     marginLeft: SIZES.small / 2,
     marginTop: SIZES.small / 2,
     borderRadius: SIZES.small,

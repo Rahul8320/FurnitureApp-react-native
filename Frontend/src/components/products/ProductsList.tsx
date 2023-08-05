@@ -25,7 +25,6 @@ const ProductsList = () => {
         keyExtractor={item => item._id}
         renderItem={({item}) => <ProductCardView product={item} />}
         contentContainerStyle={styles.container}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
     </View>
   );
@@ -34,17 +33,14 @@ const ProductsList = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingTop: SIZES.small,
-    marginLeft: SIZES.xSmall / 2,
+    paddingTop: SIZES.xxLarge,
+    paddingLeft: SIZES.small / 2,
   },
   loadingContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-  },
-  separator: {
-    height: 16,
   },
 });
 
