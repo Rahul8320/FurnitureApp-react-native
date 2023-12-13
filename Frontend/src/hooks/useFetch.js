@@ -9,8 +9,10 @@ function useFetch() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://192.168.0.164:3000/products/');
-      setData(response.data.data);
+      const response = await axios.get(
+        'https://dummyjson.com/products/category/furniture',
+      );
+      setData(response.data.products);
       setLoading(false);
     } catch (err) {
       console.log(err);

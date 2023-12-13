@@ -25,7 +25,7 @@ const App = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
-            name="ProuctDetails"
+            name="ProductDetails"
             component={ProductDetails}
             options={{headerShown: false}}
           />

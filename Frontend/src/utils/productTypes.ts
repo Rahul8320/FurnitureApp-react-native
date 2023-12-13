@@ -1,9 +1,13 @@
 export interface ProductType {
-  _id: string;
+  id: string;
   title: string;
-  supplier: string;
   description: string;
-  imageUrl: string;
-  location: string;
   price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  brand: string;
+  category: string;
+  thumbnail: string;
+  images: [string];
 }

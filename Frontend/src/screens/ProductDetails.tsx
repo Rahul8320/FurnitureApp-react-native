@@ -61,7 +61,7 @@ const ProductDetails = ({navigation}: any) => {
 
       <Image
         source={{
-          uri: product.imageUrl,
+          uri: product.thumbnail,
         }}
         style={styles.img}
       />
@@ -85,7 +85,7 @@ const ProductDetails = ({navigation}: any) => {
               />
             ))}
 
-            <Text style={styles.ratingTxt}>(4.9)</Text>
+            <Text style={styles.ratingTxt}>({product.rating})</Text>
           </View>
 
           <View style={styles.rating}>
@@ -101,16 +101,17 @@ const ProductDetails = ({navigation}: any) => {
 
         <View style={styles.descWrapper}>
           <Text style={styles.desc}>Description</Text>
-          <Text style={styles.descTxt} numberOfLines={5}>
+          <Text style={styles.descTxt} numberOfLines={2}>
             {product.description}
           </Text>
+          <Text>Brand: {product.brand}</Text>
         </View>
 
         <View style={{marginBottom: SIZES.small}}>
           <View style={styles.location}>
             <View style={{flexDirection: 'row'}}>
-              <Ionicons name="location-outline" size={20} />
-              <Text style={{marginLeft: 5}}>{product.location}</Text>
+              <Ionicons name="storefront-outline" size={20} />
+              <Text style={{marginLeft: 5}}>{product.stock} stock left</Text>
             </View>
 
             <View style={{flexDirection: 'row'}}>
