@@ -24,7 +24,7 @@ const ProductRow = () => {
       ) : (
         <FlatList
           data={products}
-          keyExtractor={item => item._id}
+          keyExtractor={item => item.id}
           renderItem={({item}) => <ProductCardView product={item} />}
           horizontal={true}
           contentContainerStyle={{columnGap: SIZES.medium}}

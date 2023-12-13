@@ -23,7 +23,9 @@ const ProductsList = () => {
         data={products}
         numColumns={2}
         keyExtractor={item => item.id}
-        renderItem={({item}) => <ProductCardView product={item} />}
+        renderItem={({item}) => (
+          <ProductCardView product={item} key={item.id} />
+        )}
         contentContainerStyle={styles.container}
       />
     </View>

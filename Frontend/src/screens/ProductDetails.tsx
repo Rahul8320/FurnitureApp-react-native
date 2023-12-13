@@ -110,14 +110,16 @@ const ProductDetails = ({navigation}: any) => {
 
         <View style={{marginBottom: SIZES.small}}>
           <View style={styles.location}>
-            <View style={{flexDirection: 'row'}}>
+            <View style={styles.verticalView}>
               <Ionicons name="storefront-outline" size={20} />
-              <Text style={{marginLeft: 5}}>{product.stock} stock left</Text>
+              <Text style={styles.verticalViewText}>
+                {product.stock} stock left
+              </Text>
             </View>
 
-            <View style={{flexDirection: 'row'}}>
+            <View style={styles.verticalView}>
               <MaterialCommunityIcons name="truck-delivery-outline" size={20} />
-              <Text style={{marginLeft: 5}}>Free Delivery</Text>
+              <Text style={styles.verticalViewText}>Free Delivery</Text>
             </View>
           </View>
         </View>
@@ -256,6 +258,12 @@ const styles = StyleSheet.create({
     top: SIZES.small,
     zIndex: 999,
     width: '90%',
+  },
+  verticalView: {
+    flexDirection: 'row',
+  },
+  verticalViewText: {
+    marginLeft: 5,
   },
 });
 

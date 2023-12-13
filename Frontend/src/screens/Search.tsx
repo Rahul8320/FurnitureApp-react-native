@@ -36,7 +36,7 @@ const Search = () => {
   };
   return (
     <SafeAreaView>
-      <View style={styles.searchConatiner}>
+      <View style={styles.searchContainer}>
         <TouchableOpacity>
           <Ionicons
             name="camera-outline"
@@ -71,7 +71,7 @@ const Search = () => {
           <FlatList
             data={searchResult}
             numColumns={2}
-            keyExtractor={(item: any) => item._id}
+            keyExtractor={(item: any) => item.id}
             renderItem={({item}) => <ProductCardView product={item} />}
             contentContainerStyle={styles.container}
           />
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.primary,
   },
-  searchConatiner: {
+  searchContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
