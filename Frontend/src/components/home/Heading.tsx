@@ -3,9 +3,10 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {COLORS, FONTS, SIZES} from '../../../constant/theme';
 import {useNavigation} from '@react-navigation/native';
+import {productsListScreenProps} from '../../utils/rootStackParamList';
 
 const Heading = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<productsListScreenProps>();
   return (
     <View style={styles.container}>
       <View style={styles.header}>

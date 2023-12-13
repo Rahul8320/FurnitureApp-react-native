@@ -24,9 +24,9 @@ const Search = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://192.168.0.164:3000/products/search/${searchKey}`,
+        `https://dummyjson.com/products/search?q=${searchKey}`,
       );
-      setSearchResult(response.data.data);
+      setSearchResult(response.data.products);
       setLoading(false);
     } catch (error: any) {
       console.log(error.message);

@@ -24,7 +24,7 @@ const Welcome = () => {
         </Text>
       </View>
 
-      <View style={styles.searchConatiner}>
+      <View style={styles.searchContainer}>
         <TouchableOpacity>
           <Feather name="search" size={SIZES.large} style={styles.searchIcon} />
         </TouchableOpacity>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.primary,
   },
-  searchConatiner: {
+  searchContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

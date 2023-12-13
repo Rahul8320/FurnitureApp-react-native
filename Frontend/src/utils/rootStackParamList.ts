@@ -13,3 +13,8 @@ export type productDetailsScreenProps = NativeStackNavigationProp<
   RootStackParamList,
   'ProductDetails'
 >;
+
+export type productsListScreenProps = NativeStackNavigationProp<
+  RootStackParamList,
+  'ProductsList'
+>;
