@@ -5,8 +5,9 @@ import Home from '../screens/Home';
 import Search from '../screens/Search';
 import Profile from '../screens/Profile';
 import {COLORS, SIZES} from '../../constant/theme';
+import {BottomTabParamList} from '../utils/bottomTabParamList';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const BottomTabNavigation = () => {
   return (
@@ -57,7 +58,7 @@ const BottomTabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="profile"
+        name="Profile"
         component={Profile}
         options={{
           // eslint-disable-next-line react/no-unstable-nested-components

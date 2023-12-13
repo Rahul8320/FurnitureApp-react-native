@@ -7,17 +7,18 @@ import {
   SafeAreaView,
   Image,
 } from 'react-native';
-import {useRoute} from '@react-navigation/native';
+import {RouteProp, useRoute} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import {COLORS, FONTS, SIZES} from '../../constant/theme';
 import Toast from 'react-native-toast-message';
+import {RootStackParamList} from '../utils/rootStackParamList';
 
 const ProductDetails = ({navigation}: any) => {
-  const route = useRoute();
-  const {product} = route.params;
+  const route = useRoute<RouteProp<RootStackParamList, 'ProductDetails'>>();
+  const product = route.params;
 
   const [count, setCount] = useState(1);
 

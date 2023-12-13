@@ -22,7 +22,7 @@ const ProductsList = () => {
       <FlatList
         data={products}
         numColumns={2}
-        keyExtractor={item => item._id}
+        keyExtractor={item => item.id}
         renderItem={({item}) => <ProductCardView product={item} />}
         contentContainerStyle={styles.container}
       />

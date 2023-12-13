@@ -6,8 +6,9 @@ import Cart from './screens/Cart';
 import ProductDetails from './screens/ProductDetails';
 import Toast from 'react-native-toast-message';
 import NewRivals from './screens/NewRivals';
+import {RootStackParamList} from './utils/rootStackParamList';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Bottom Navigation"
+            name="BottomNavigation"
             component={BottomTabNavigation}
             options={{headerShown: false}}
           />

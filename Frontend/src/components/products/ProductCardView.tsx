@@ -4,17 +4,18 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import {COLORS, FONTS, SIZES} from '../../../constant/theme';
 import {ProductType} from '../../utils/productTypes';
+import {productDetailsScreenProps} from '../../utils/rootStackParamList';
 
 interface ProductCardViewType {
   product: ProductType;
 }
 
 const ProductCardView = ({product}: ProductCardViewType) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<productDetailsScreenProps>();
 
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('ProductDetails', {product})}>
+      onPress={() => navigation.navigate('ProductDetails', product)}>
       <View style={styles.container}>
         <View style={styles.imgContainer}>
           <Image
